@@ -11,13 +11,13 @@ var handlebars = require('express-handlebars');
 // and documentation.
 
 keystone.init({
-	'name': 'IncTicket',
-	'brand': 'IncTicket',
+	name: 'IncTicket',
+	brand: 'IncTicket',
 
-	'less': 'public',
-	'static': 'public',
-	'favicon': 'public/favicon.ico',
-	'views': 'templates/views',
+	less: 'public',
+	static: 'public',
+	favicon: 'public/favicon.ico',
+	views: 'templates/views',
 	'view engine': '.hbs',
 
 	'custom engine': handlebars.create({
@@ -29,8 +29,8 @@ keystone.init({
 	}).engine,
 
 	'auto update': true,
-	'session': true,
-	'auth': true,
+	session: true,
+	auth: true,
 	'user model': 'User',
 });
 
@@ -50,14 +50,12 @@ keystone.set('locals', {
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
-
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	users: 'users',
+	manageTickets: 'tickets',
 });
 
 // Start Keystone to connect to your database and initialise the web server
-
-
 
 keystone.start();

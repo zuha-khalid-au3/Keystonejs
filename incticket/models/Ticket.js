@@ -6,7 +6,7 @@ var Ticket = new keystone.List('Ticket', {
 });
 
 Ticket.add({
-	title: { type: String, initial: true, default: '', required: true },
+	title: { type: String, initial: true, default: 'ff', required: true },
 	description: { type: Types.Textarea },
 	priority: {
 		type: Types.Select,
@@ -35,8 +35,8 @@ Ticket.add({
 		index: true,
 		many: false,
 	},
-	createdAt: { type: Datetime, default: Date.now },
-	updatedAt: { type: Datetime, default: Date.now },
+	createdAt: { type: Types.Datetime, default: Date.now },
+	updatedAt: { type: Types.Datetime, default: Date.now },
 });
 
 Ticket.defaultSort = '-createdAt';

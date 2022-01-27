@@ -40,5 +40,7 @@ Ticket.add({
 });
 
 Ticket.defaultSort = '-createdAt';
-
+Ticket.schema.virtual('url').get(function () {
+	return '/tickets/' + this.slug;
+});
 Ticket.register();

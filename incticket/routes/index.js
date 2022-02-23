@@ -43,6 +43,6 @@ exports = module.exports = function (app) {
 	// });
 	app.get('/tickets', routes.views.tickets.ticketlist);
 	app.get('/tickets/:ticketslug', function (req, res, next) {
-		res.send('hello:' + req.params.ticketslug);
+		res.send('We will show that has slug:' + req.params.ticketslug);
 	});
 };

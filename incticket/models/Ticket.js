@@ -6,7 +6,7 @@ var Ticket = new keystone.List('Ticket', {
 });
 
 Ticket.add({
-	title: { type: String, initial: true, default: 'ff', required: true },
+	title: { type: String, initial: true, default: 'Enter val', required: true },
 	description: { type: Types.Textarea },
 	priority: {
 		type: Types.Select,

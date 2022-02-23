@@ -1,0 +1,47 @@
+{% extends "../../layouts/default.twig" %}
+
+ {% block content %}
+
+ <div class="container">
+ <div class="panel panel-primary">
+ <!-- Default panel contents -->
+ <div class="panel-heading">Tickets</div>
+ <div class="panel-body">
+ <p>These are list of tickets in the system.</p>
+ </div>
+ <!-- Table -->
+ <table class="table table-striped">
+ {% for ticket in data.tickets %}
+ <tr>
+ <td>
+ <div class=' col-md-1'>
+<span class="label label-info pull-right">{{ticket.
+status}}</span>
+ </div>
+
+ <a href='{{ticket.url}}'><b>{{ticket.title|capitalize}}</b><a>
+
+ <ul class="ticket-meta">
+ <li>&nbsp;</li>
+ <li>
+<small>Status</small><a href=""rel="tag">{{ticket.status}}</a>
+ </li>
+ <li>
+ <small>Priority</small><a href=""rel="tag">{{ticket.priority}}</a>
+ </li>
+ <li>
+ <small>Category</small><a href=""rel="tag">{{ticket.category}}</a>
+ </li>
+ <li>
+ <small>Last Updated</small>
+ <abbr class="lastupdated">{{ticket._.createdAt.format('Do MMMM YYYY')}}</abbr>
+ </li>
+ </ul>
+ </td>
+ </tr>
+ {% endfor %}
+ </table>
+ <div class="panel-footer"></div>
+ </div>
+ </div>
+{% endblock %}

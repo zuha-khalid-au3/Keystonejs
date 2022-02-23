@@ -18,7 +18,7 @@ exports = module.exports = function (req, res) {
 			} else {
 				return res
 					.status(404)
-					.send(keystone.wrapHTMLError('Sorry, noooooooo ticket found! (404)'));
+					.send(keystone.wrapHTMLError('Sorry, no ticket found! (404)'));
 			}
 			next(err);
 		});
